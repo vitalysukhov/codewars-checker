@@ -1,0 +1,15 @@
+{
+  "name": "codewars-checker",
+  "version": "0.0.1",
+  "description": "Fetch tasks for users from CodeWars and check if task list is completed",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vitaly Sukhov",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^10.0.0",
+    "node-fetch": "^2.6.9"
+  }
+}
