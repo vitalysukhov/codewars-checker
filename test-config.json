@@ -1,8 +1,40 @@
 {
     "codewars_users": [
         "vitaliy-suhov",
-        "g964",
-        "myjinxin2015",
-        "jhoffner"
+        "Y.y",
+        "jhoffner",
+        "8fdafs2"
+    ],
+    "codewars_challenges": [
+        {
+            "id": "52597aa56021e91c93000cb0",
+            "name": "Moving Zeros To The End",
+            "stage": "Coding Task Basics"
+        },
+        {
+            "id": "541c8630095125aba6000c00",
+            "name": "Sum of Digits / Digital Root",
+            "stage": "Recursion"
+        },
+        {
+            "id": "596f72bbe7cd7296d1000029",
+            "name": "Array Deep Count",
+            "stage": "Recursion"
+        },
+        {
+            "id": "5899642f6e1b25935d000161",
+            "name": "Merge two sorted arrays into one",
+            "stage": "Recursion"
+        },
+        {
+            "id": "reversed-strings",
+            "name": "Reversed Strings",
+            "stage": "Recursion"
+        },
+        {
+            "id": "576757b1df89ecf5bd00073b",
+            "name": "Build Tower",
+            "stage": "Recursion"
+        }
     ]
 }

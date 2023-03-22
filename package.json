@@ -4,12 +4,14 @@
   "description": "Fetch tasks for users from CodeWars and check if task list is completed",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js report --config ./test-config.json"
   },
   "author": "Vitaly Sukhov",
   "license": "MIT",
   "dependencies": {
-    "commander": "^10.0.0",
-    "node-fetch": "^2.6.9"
+    "commander": "10.0.0",
+    "csv-writer": "1.6.0",
+    "node-fetch": "2.6.9"
   }
 }

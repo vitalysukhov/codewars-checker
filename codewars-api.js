@@ -9,6 +9,8 @@ const fetch = require('node-fetch');
 const CODEWARS_API_DOMAIN = 'http://www.codewars.com/api/v1';
 const CODEWARS_USER_API = CODEWARS_API_DOMAIN + `/users/`;
 
+const timeout = (ms) => new Promise((resolve) => setTimeout(() => resolve(), ms));
+
 const getUserCompletedChallengesUrl = (user, page) => {
     return CODEWARS_USER_API + user + `/code-challenges/completed?page=` + page;
 }
@@ -39,17 +41,34 @@ const validateResponseStatusCode = async (response, expectedCode) => {
 }
 
 
-const fetchAllUsersChallenges = async (user) => {
+const fetchAllUserChallenges = async (user) => {
     let responseData = await fetchUsersChallengesByPage(user, 0);
     const challenges = [...responseData.data];
     const totalPages = responseData.totalPages;
 
     for (let i = 1; i < totalPages; i++) {
+        // TODO. Trotting to prevent API DDOS
+        await timeout(50);
+
+        // TODO. Add progress here
         responseData = await fetchUsersChallengesByPage(user, 0);
         challenges.push(...responseData.data)
     }
 
     return challenges;
+}
+
+const fetchAllUsersChallenges = async (users) => {
+    const usersChallenges = {};
+    for (const user of users) {
+        // TODO. Add progress here
+        usersChallenges[user] = await fetchAllUserChallenges(user);
+
+        // TODO. Trotting to prevent API DDOS
+        await timeout(100);
+    }
+
+    return usersChallenges;
 }
 
 
